@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class GunInput : BulletInput
 {
+    public GameObject TheGun;
 
     protected override void Reload(InputAction.CallbackContext value)
     {
@@ -43,39 +44,8 @@ public class GunInput : BulletInput
         bulletRemaining = data.bulletCapacity;
 
         StartCoroutine(ShootState());
-        StartCoroutine(ReloadState());
     }
 
-    protected virtual IEnumerator ReloadState()
-    {
-        while (true)
-        {
-            yield return new WaitUntil(() => reloadingState == ReloadingState.StartReloading);
-
-            while (bulletRemaining < data.bulletCapacity)
-            {
-                reloadingState = ReloadingState.Reloading;
-                float t = 0;
-                yield return new WaitUntil(
-                    () =>
-                    {
-                        t += Time.deltaTime;
-                        if (t >= data.bulletReloadTime / data.bulletCapacity)
-                        {
-                            audioSource.PlayOneShot(data.reloadClip);
-                            bulletRemaining++;
-                            return true;
-                        }
-                        else if (reloadingState == ReloadingState.StopReloading)
-                            return true;
-                        else
-                            return false;
-                    });
-                if (reloadingState == ReloadingState.StopReloading) break;
-            }
-            reloadingState = ReloadingState.Ready;
-        }
-    }
 
     protected virtual IEnumerator ShootState()
     {

@@ -7,6 +7,7 @@ public class InputHelper_SideView : InputHelper
 {
     public Transform theGunPosition;
     public bool getGun = false;
+    Collider2D i;
 
     [Header("Move")]
     public float walkSpeed = 1;
@@ -19,7 +20,7 @@ public class InputHelper_SideView : InputHelper
     [Header("Animation")]
     public SpriteRenderer spriteRenderer;
     public Animator animator;
-
+    public Collider2D collision;
 
     Rigidbody2D rb2D;
     BoxCollider2D box;
@@ -35,6 +36,7 @@ public class InputHelper_SideView : InputHelper
     {
         rb2D = GetComponent<Rigidbody2D>();
         box = GetComponent<BoxCollider2D>();
+        i = GetComponent<Collider2D>();
         origin = new Vector2(0, box.bounds.extents.y * -1.1f) + box.offset;
         size = new Vector2(box.bounds.size.x, 0.01f);
     }
@@ -66,6 +68,7 @@ public class InputHelper_SideView : InputHelper
         #endregion
 
         //Aim(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+
     }
 
     protected override void Action(InputAction.CallbackContext value)
@@ -92,18 +95,34 @@ public class InputHelper_SideView : InputHelper
     {
         horizontalMove = value.ReadValue<Vector2>().x;
     }
+
     protected override void PickUp(InputAction.CallbackContext value)
     {
+        
+        if (getGun == true)
+        {
+            i.gameObject.SetActive(false);
+            theGunPosition.gameObject.SetActive(true);
+            getGun = false;
+        }
+    }
 
+    protected override void Drop(InputAction.CallbackContext value)
+    {
+        if (getGun == false)
+        {
+            theGunPosition.gameObject.SetActive(false);  
+        }
+        
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Gun"))
+        i = collision;
+
+        if(collision.gameObject.CompareTag("Gun"))
         {
             getGun = true;
-            Destroy(collision.gameObject);
-            theGunPosition.gameObject.SetActive(true);
         }
     }
 }
