@@ -61,16 +61,13 @@ public class InputHelper_SideView : InputHelper
         animator.SetFloat("Horizontal", rb2D.velocity.x);
         animator.SetBool("isGrounded", isGrounded);
         #endregion
+
+        //Aim(Camera.main.ScreenToWorldPoint(Input.mousePosition));
     }
 
     protected override void Action(InputAction.CallbackContext value)
     {
         
-    }
-
-    protected override void Aim(InputAction.CallbackContext value)
-    {
-
     }
 
     protected override void Jump(InputAction.CallbackContext value)
@@ -93,13 +90,4 @@ public class InputHelper_SideView : InputHelper
         horizontalMove = value.ReadValue<Vector2>().x;
     }
 
-    protected override void Reload(InputAction.CallbackContext value)
-    {
-
-    }
-
-    protected override void Shoot(InputAction.CallbackContext value)
-    {
-
-    }
 }

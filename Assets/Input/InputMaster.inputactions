@@ -22,14 +22,6 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Aim",
-                    "type": "Value",
-                    "id": "02042900-ac00-4798-b128-2bf9f5da9040",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "Move",
                     "type": "Value",
                     "id": "f3fa45b8-c45b-440f-95fc-680b5cdba868",
@@ -274,28 +266,6 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "e87225eb-cf69-429c-af79-2f75827986f2",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard & Mouse",
-                    "action": "Aim",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "04c6c81e-1f1e-4450-b114-43a2e31d0651",
-                    "path": "<Gamepad>/rightStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Aim",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 },
                 {
                     "name": "",

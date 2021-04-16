@@ -1011,24 +1011,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2448986, y: 2.3519726}
   m_EdgeRadius: 0
---- !u!114 &954142216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 954142207}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8c4afb36b67d2241b9563f471c30014, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: e0d9099d20ff83e4a9706f3832460a92, type: 2}
-  bulletRemaining: 0
-  autoReload: 0
-  gunSprite: {fileID: 4131715924383552955, guid: 2be06b376b9d89d49b93c43677027a22,
-    type: 3}
-  audioSource: {fileID: 0}
 --- !u!1 &1049269321
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,6 +1121,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: rifle_de_asalto
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223922198889170426, guid: 2be06b376b9d89d49b93c43677027a22,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4131715924383552955, guid: 2be06b376b9d89d49b93c43677027a22,
         type: 3}
@@ -1264,16 +1251,46 @@ MonoBehaviour:
   m_GameObject: {fileID: 1500477358}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c1769c91a8e89a48b92510113f8a907, type: 3}
+  m_Script: {fileID: 11500000, guid: 35125966be7f7064fb0d51763daa90c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: e0d9099d20ff83e4a9706f3832460a92, type: 2}
   bulletRemaining: 0
-  autoReload: 1
+  autoReload: 0
   gunSprite: {fileID: 4131715924383552955, guid: 2be06b376b9d89d49b93c43677027a22,
     type: 3}
   audioSource: {fileID: 0}
-  aimTarget: {fileID: 0}
+--- !u!114 &1500477362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500477358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 862c25182983f914eb2c5e5bb1dfdbf6,
+    type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 519420031}
 --- !u!1 &1548000917
 GameObject:
   m_ObjectHideFlags: 0
@@ -2058,5 +2075,17 @@ PrefabInstance:
       propertyPath: useLinearDrag
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7457545640220506812, guid: c4271c9b924252a48b758a8e535f257e,
+        type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: e0d9099d20ff83e4a9706f3832460a92,
+        type: 2}
+    - target: {fileID: 7457545640220506812, guid: c4271c9b924252a48b758a8e535f257e,
+        type: 3}
+      propertyPath: gunSprite
+      value: 
+      objectReference: {fileID: 4131715924383552955, guid: 2be06b376b9d89d49b93c43677027a22,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4271c9b924252a48b758a8e535f257e, type: 3}

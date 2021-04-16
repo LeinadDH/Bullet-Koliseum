@@ -12,17 +12,7 @@ public class ManualShooter : ShooterBehaviour
 
             if (Input.GetButtonDown("Fire1"))
             {
-                if (bulletRemaining > 0)
-                {
-                    shootingState = ShootingState.Shoot;
-                    yield return new WaitUntil(() => shootingState == ShootingState.Idle);
-                }
-                else
-                {
-                    audioSource.PlayOneShot(data.emptyClip);
-                    if (autoReload)
-                        reloadingState = ReloadingState.StartReloading;
-                }
+                
             }
             if (Input.GetButtonDown("Fire2"))
             {
@@ -35,4 +25,6 @@ public class ManualShooter : ShooterBehaviour
     {
         Aim(Camera.main.ScreenToWorldPoint(Input.mousePosition));
     }
+
+
 }
