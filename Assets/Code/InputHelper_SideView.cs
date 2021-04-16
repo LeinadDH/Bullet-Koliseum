@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class InputHelper_SideView : InputHelper
 {
+    public Transform theGunPosition;
+    public bool getGun = false;
 
     [Header("Move")]
     public float walkSpeed = 1;
@@ -17,6 +19,7 @@ public class InputHelper_SideView : InputHelper
     [Header("Animation")]
     public SpriteRenderer spriteRenderer;
     public Animator animator;
+
 
     Rigidbody2D rb2D;
     BoxCollider2D box;
@@ -89,5 +92,18 @@ public class InputHelper_SideView : InputHelper
     {
         horizontalMove = value.ReadValue<Vector2>().x;
     }
+    protected override void PickUp(InputAction.CallbackContext value)
+    {
 
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Gun"))
+        {
+            getGun = true;
+            Destroy(collision.gameObject);
+            theGunPosition.gameObject.SetActive(true);
+        }
+    }
 }

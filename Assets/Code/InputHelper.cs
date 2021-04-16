@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public enum InputHelperActions { Action, Aim, Jump, Move, Reload, Shoot }
+public enum InputHelperActions { Action, Aim, Jump, Move, Reload, Shoot, PickUp }
 
 [RequireComponent(typeof(PlayerInput))]
 public abstract class InputHelper : MonoBehaviour
@@ -17,13 +17,16 @@ public abstract class InputHelper : MonoBehaviour
         playerInput.actions[InputHelperActions.Action.ToString()].performed += Action;
         playerInput.actions[InputHelperActions.Jump.ToString()].performed += Jump;
         playerInput.actions[InputHelperActions.Move.ToString()].performed += Move;
+        playerInput.actions[InputHelperActions.PickUp.ToString()].performed += PickUp;
 
         playerInput.actions[InputHelperActions.Action.ToString()].canceled += Action;
         playerInput.actions[InputHelperActions.Jump.ToString()].canceled += Jump;
         playerInput.actions[InputHelperActions.Move.ToString()].canceled += Move;
+        playerInput.actions[InputHelperActions.PickUp.ToString()].canceled += PickUp;
     }
 
     protected abstract void Action(InputAction.CallbackContext value);
     protected abstract void Jump(InputAction.CallbackContext value);
     protected abstract void Move(InputAction.CallbackContext value);
+    protected abstract void PickUp(InputAction.CallbackContext value);
 }
