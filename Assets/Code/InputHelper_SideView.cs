@@ -7,7 +7,11 @@ public class InputHelper_SideView : InputHelper
 {
     public Transform theGunPosition;
     public bool getGun = false;
+    public bool SpawnGun = false;
     Collider2D i;
+
+    public SpriteRenderer weapon;
+
 
     [Header("Move")]
     public float walkSpeed = 1;
@@ -21,6 +25,9 @@ public class InputHelper_SideView : InputHelper
     public SpriteRenderer spriteRenderer;
     public Animator animator;
     public Collider2D collision;
+
+    public Transform Spawner;
+    public float timeOfSpawn;
 
     Rigidbody2D rb2D;
     BoxCollider2D box;
@@ -67,8 +74,19 @@ public class InputHelper_SideView : InputHelper
         animator.SetBool("isGrounded", isGrounded);
         #endregion
 
-        //Aim(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        WeaponFlip();
 
+        if (SpawnGun == true)
+        {
+            timeOfSpawn += Time.deltaTime;
+
+            if (timeOfSpawn >= 5f)
+            {
+                Spawner.gameObject.SetActive(true);
+                SpawnGun = false;
+                timeOfSpawn = 0;
+            }
+        }
     }
 
     protected override void Action(InputAction.CallbackContext value)
@@ -104,6 +122,7 @@ public class InputHelper_SideView : InputHelper
             i.gameObject.SetActive(false);
             theGunPosition.gameObject.SetActive(true);
             getGun = false;
+            SpawnGun = true;
         }
     }
 
@@ -113,7 +132,6 @@ public class InputHelper_SideView : InputHelper
         {
             theGunPosition.gameObject.SetActive(false);  
         }
-        
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -125,4 +143,11 @@ public class InputHelper_SideView : InputHelper
             getGun = true;
         }
     }
+
+    void WeaponFlip()
+    {
+        weapon.flipX = spriteRenderer.flipX;
+    }
+
+
 }

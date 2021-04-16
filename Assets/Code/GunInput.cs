@@ -75,13 +75,7 @@ public class GunInput : BulletInput
     {
         audioSource.PlayOneShot(data.shootClip);
         bulletRemaining--;
-
         Instantiate(data.bulletPrefab, transform.position, transform.rotation);
-    }
-
-    public virtual void Aim(Vector2 targetPos)
-    {
-        transform.eulerAngles = Vector3.forward * Mathf.Atan2(targetPos.y - transform.position.y, targetPos.x - transform.position.x) * Mathf.Rad2Deg;
     }
 
     public virtual void SetNewGunData(GunData newData)

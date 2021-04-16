@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public enum BulletInputHelper { Reload, Shoot }
+public enum BulletInputHelper { Reload, Shoot, Aim }
 
 [RequireComponent(typeof(PlayerInput))]
 public abstract class BulletInput : MonoBehaviour
