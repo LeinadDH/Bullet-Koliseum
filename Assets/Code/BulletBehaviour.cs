@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletBehaviour : MonoBehaviour
 {
+
     [Header("Bullet Config")]
     public float speed;
     public float damage;

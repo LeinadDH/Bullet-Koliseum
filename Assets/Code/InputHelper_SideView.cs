@@ -10,6 +10,8 @@ public class InputHelper_SideView : InputHelper
     public bool SpawnGun = false;
     Collider2D i;
 
+    public int Speed;
+
     public SpriteRenderer weapon;
 
 
@@ -75,6 +77,15 @@ public class InputHelper_SideView : InputHelper
         #endregion
 
         WeaponFlip();
+
+        if (rb2D.velocity.x >= 0)
+        {
+            Speed = 1;
+        }
+        else if (rb2D.velocity.x < 0)
+        {
+            Speed = -1;
+        }
 
         if (SpawnGun == true)
         {

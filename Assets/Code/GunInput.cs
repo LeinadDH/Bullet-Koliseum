@@ -5,8 +5,7 @@ using UnityEngine.InputSystem;
 
 public class GunInput : BulletInput
 {
-    public GameObject TheGun;
-
+    Vector3 inverseRotation = new Vector3(0, 180, 0);
     protected override void Reload(InputAction.CallbackContext value)
     {
         reloadingState = ReloadingState.StartReloading;
@@ -75,7 +74,15 @@ public class GunInput : BulletInput
     {
         audioSource.PlayOneShot(data.shootClip);
         bulletRemaining--;
-        Instantiate(data.bulletPrefab, transform.position, transform.rotation);
+        if (gunSprite.flipX == false)
+        {
+            Instantiate(data.bulletPrefab, transform.position, transform.rotation);
+        }
+        if (gunSprite.flipX == true)
+        {
+            Instantiate(data.bulletPrefab, transform.position, Quaternion.Euler(inverseRotation));
+        }
+
     }
 
     public virtual void SetNewGunData(GunData newData)

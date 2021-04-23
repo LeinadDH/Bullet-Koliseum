@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bebddd4746f79147a73ca867926000b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weapon: {fileID: 4574082278290614254}
   speed: 9
   damage: 1
   despawnDelay: 3
