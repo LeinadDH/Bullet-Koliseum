@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GunPosition1
   - Gun
+  - aquiVaElTag
   layers:
   - Default
   - TransparentFX
