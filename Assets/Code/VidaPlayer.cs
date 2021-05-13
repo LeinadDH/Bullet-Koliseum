@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class VidaPlayer : MonoBehaviour
 {
+    public GameObject Furro;
     public float vida = 100;
     public Image barraDeVida;
     public float damage = 10;
@@ -14,7 +15,8 @@ public class VidaPlayer : MonoBehaviour
         barraDeVida.fillAmount = vida / 100;
         if(vida == 0)
         {
-            //Aqui va el método del respawn :3
+            //Aqui va el método del respawn :3 <2
+            Destroy(Furro);
         }
     }
     private void OnCollisionEnter2D(Collision2D other)

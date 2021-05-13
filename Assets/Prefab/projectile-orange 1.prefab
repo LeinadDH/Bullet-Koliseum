@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 4574082278290614254}
   - component: {fileID: 9173913099982557749}
   - component: {fileID: 8370705218310840660}
+  - component: {fileID: 5056781169773554839}
   m_Layer: 0
   m_Name: projectile-orange 1
-  m_TagString: Untagged
+  m_TagString: aquiVaElTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,7 +96,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bebddd4746f79147a73ca867926000b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 4574082278290614254}
   speed: 9
   damage: 1
   despawnDelay: 3
@@ -123,3 +123,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!70 &5056781169773554839
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4574082278290614253}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.009955899, y: -0.001991158}
+  m_Size: {x: 0.22642267, y: 0.098997094}
+  m_Direction: 1
