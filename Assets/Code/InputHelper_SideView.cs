@@ -46,7 +46,7 @@ public class InputHelper_SideView : InputHelper
         rb2D = GetComponent<Rigidbody2D>();
         box = GetComponent<BoxCollider2D>();
         i = GetComponent<Collider2D>();
-        origin = new Vector2(0, box.bounds.extents.y * -1.1f) + box.offset;
+        origin = new Vector2(0, box.bounds.extents.y * -2.5f) + box.offset;
         size = new Vector2(box.bounds.size.x, 0.01f);
     }
 
