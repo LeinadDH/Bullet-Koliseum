@@ -261,7 +261,8 @@ GameObject:
   - component: {fileID: 2863781247166718160}
   - component: {fileID: 2863781247166718166}
   - component: {fileID: 2863781247166718164}
-  - component: {fileID: 2863781247166718165}
+  - component: {fileID: 3874554365469489130}
+  - component: {fileID: 146768778168878893}
   m_Layer: 0
   m_Name: MonaChina2
   m_TagString: Untagged
@@ -278,7 +279,7 @@ Transform:
   m_GameObject: {fileID: 2863781247166718188}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 1.222, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 2863781248578765530}
   - {fileID: 2863781249008031425}
@@ -397,8 +398,8 @@ MonoBehaviour:
   - {fileID: 2863781248336737301}
   - {fileID: 2863781247036945669}
   m_Bounds:
-    m_Center: {x: -0.017764747, y: 0.37974352, z: 0}
-    m_Extent: {x: 0.66153973, y: 1.1982384, z: 0}
+    m_Center: {x: -0.017764926, y: 0.37974352, z: 0}
+    m_Extent: {x: 0.6615397, y: 1.1982384, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!61 &2863781247166718167
@@ -498,7 +499,7 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &2863781247166718165
+--- !u!114 &3874554365469489130
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -507,21 +508,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 2863781247166718188}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: def024b9c3d1bc44f900903cf56ef693, type: 3}
+  m_Script: {fileID: 11500000, guid: f99b11c082d831042b2cc108894c0581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theGunPosition: {fileID: 2863781249008031425}
+  Furro: {fileID: 0}
+  vida: 100
+  barraDeVida: {fileID: 0}
+  damage: 10
+--- !u!114 &146768778168878893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2863781247166718188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86500ab51d9f3ae4790a690abb48f888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theGunPosition: {fileID: 0}
   getGun: 0
   SpawnGun: 0
   Speed: 0
-  weapon: {fileID: 2863781249008031452}
-  walkSpeed: 2
+  weapon: {fileID: 0}
+  walkSpeed: 1
   useLinearDrag: 1
   jumpForce: 1
   multiJump: 1
-  spriteRenderer: {fileID: 2863781247166718162}
-  animator: {fileID: 2863781247166718166}
-  collision: {fileID: 2863781247166718167}
+  spriteRenderer: {fileID: 0}
+  animator: {fileID: 0}
+  collision: {fileID: 0}
   Spawner: {fileID: 0}
   timeOfSpawn: 0
 --- !u!1 &2863781247179378124

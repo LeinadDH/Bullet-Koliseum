@@ -76,11 +76,11 @@ public class GunInput : BulletInput
         bulletRemaining--;
         if (gunSprite.flipX == false)
         {
-            Instantiate(data.bulletPrefab, transform.position, transform.rotation);
+            Instantiate(data.bulletPrefab, transform.position + new Vector3(0.8f, 0, 0), transform.rotation);
         }
         if (gunSprite.flipX == true)
         {
-            Instantiate(data.bulletPrefab, transform.position, Quaternion.Euler(inverseRotation));
+            Instantiate(data.bulletPrefab, transform.position + new Vector3(-1f, 0, 0), Quaternion.Euler(inverseRotation));
         }
 
     }
