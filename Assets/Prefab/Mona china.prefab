@@ -414,6 +414,7 @@ GameObject:
   - component: {fileID: 4227547603432575120}
   - component: {fileID: 4227547603432575127}
   - component: {fileID: 4227547603432575126}
+  - component: {fileID: 4152181218505724866}
   m_Layer: 0
   m_Name: Mona china
   m_TagString: Untagged
@@ -676,6 +677,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2448986, y: 2.3519726}
   m_EdgeRadius: 0
+--- !u!114 &4152181218505724866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4227547603432575854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f99b11c082d831042b2cc108894c0581, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vida: 100
+  barraDeVida: {fileID: 0}
+  damage: 10
 --- !u!1 &4227547603501269738
 GameObject:
   m_ObjectHideFlags: 0
